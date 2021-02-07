@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Todo2 from './Todo2';
 const App: React.FC = () => {
   const [name1, setname1] = useState<string>('')
   const [collect1, setcollect1] = useState<({ name1: string; id: number; })[]>([])
@@ -26,7 +27,7 @@ const App: React.FC = () => {
   }
   return (
     <div className="App">
-      <form action="submit" onSubmit={handleSubmit}>
+      {/* <form action="submit" onSubmit={handleSubmit}>
         <input type="text" value={name1} onChange={(e) => { setname1(e.target.value) }} />
       </form>
 
@@ -37,7 +38,8 @@ const App: React.FC = () => {
       }
       {collect1.map(e => <div key={e.id}>{e.name1}  <button onClick={() => { delete1(e.id) }}>delete</button>
         <button onClick={() => { openmodal(e.id) }}>edit</button>
-      </div>)}
+      </div>)} */}
+      <Todo2 />
     </div>
   );
 }
