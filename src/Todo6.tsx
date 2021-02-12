@@ -32,6 +32,8 @@ function Todo6() {
     );
     setcollect6(x);
   };
+
+  const jkahgdjahgdjahgda = (e: React.FormEvent<HTMLFormElement>) => {};
   const indexoflast = currentPage * postPerPage;
   const indexoffirst = indexoflast - postPerPage;
   const posts = collect6.slice(indexoffirst, indexoflast);
