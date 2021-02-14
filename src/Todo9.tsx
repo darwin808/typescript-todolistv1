@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import jsondata from "./MOCK_DATA (1).json";
 
 function Todo9() {
   const [name9, setname9] = useState<string>("");
@@ -8,6 +9,7 @@ function Todo9() {
   const [collect9, setcollect9] = useState<{ name9: string; id: number }[]>([]);
   const [currentPage, setcurrentPage] = useState<number>(1);
   const [postperpage, setpostperpage] = useState<number>(5);
+  const [search9, setsearch9] = useState<string>("");
   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setcollect9([...collect9, { name9, id: Math.random() }]);
@@ -36,6 +38,13 @@ function Todo9() {
   }
   return (
     <div>
+      <input
+        type="text"
+        value={search9}
+        onChange={(e) => {
+          setsearch9(e.target.value);
+        }}
+      />
       <form action="submit" onSubmit={handlesubmit}>
         <input
           type="text"
@@ -78,6 +87,13 @@ function Todo9() {
       {pagenum.map((e) => (
         <div key={e}>{e}</div>
       ))}
+      {jsondata
+        .filter((e) =>
+          e.first_name.toLowerCase().includes(search9.toLowerCase())
+        )
+        .map((e) => (
+          <div key={e.id}>{e.first_name}</div>
+        ))}
     </div>
   );
 }
