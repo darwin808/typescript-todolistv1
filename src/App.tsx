@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Todo2 from "./Todo10";
+import Todo2 from "./Todo11";
 const App: React.FC = () => {
   const [name1, setname1] = useState<string>("");
   const [collect1, setcollect1] = useState<{ name1: string; id: number }[]>([]);
