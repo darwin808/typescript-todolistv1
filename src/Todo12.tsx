@@ -5,12 +5,12 @@ const Todo12 = () => {
   const [name12, setname12] = useState<string>("");
   const [edit12, setedit12] = useState<string>("");
   const [modal, setmodal] = useState<boolean>(false);
+	
   const [idholder, setidholder] = useState<number>(0);
   const [collect12, setcollect12] = useState<{ name12: string; id: number }[]>(
     []
   );
-
-  const [currentpage, setcurrentpage] = useState<number>(1);
+const [currentpage, setcurrentpage] = useState<number>(1);
   const [postperpage, setpostperpage] = useState<number>(5);
   const [search12, setsearch12] = useState<string>("");
   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
