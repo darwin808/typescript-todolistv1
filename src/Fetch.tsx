@@ -3,7 +3,7 @@ import axios from "axios"
 
 function Fetch() {
    const [collect, setcollect] = useState<any[]>([])
-   console.log(123)
+   console.log(1234)
    useEffect(() => {
       fetchUser()
    }, [])
